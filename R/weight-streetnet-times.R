@@ -187,7 +187,7 @@ weight_sc_edges <- function (graph, wt_profile, wt_profile_file, type_col) {
             res <- res [-index, ]
         }
         # Plus remove any untagged "motorway" or "trunk" edges
-        index <- grep ("^(motorway|trunk)", res[[type_col]])
+        index <- grep ("^(motorway|trunk)", res [[type_col]])
         if (length (index) > 0L) {
             res <- res [-index, ]
         }
@@ -199,7 +199,7 @@ weight_sc_edges <- function (graph, wt_profile, wt_profile_file, type_col) {
 # Set maximum speed for each edge.
 set_maxspeed <- function (graph, wt_profile, wt_profile_file, type_col) {
 
-    if (!"maxspeed" %in% names (graph)) {
+    if (!type_col %in% names (graph)) {
         graph$maxspeed <- NA_real_
     } # nocov
     if (!type_col %in% names (graph)) {
